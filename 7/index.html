@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="personForm">
+        <label for="nameInput">Name:</label>
+        <input type="text" id="nameInput" required><br>
+    
+        <label for="ageInput">Age:</label>
+        <input type="number" id="ageInput" required><br>
+    
+        <label for="idInput">ID:</label>
+        <input type="text" id="idInput" required><br>
+    
+        <label for="lastNameInput">Last Name:</label>
+        <input type="text" id="lastNameInput" required><br>
+    
+        <button type="submit">Add Person</button>
+      </form>
+    
+      <script>
+        const form = document.getElementById("personForm");
+    
+        form.addEventListener("submit", function(event) {
+          event.preventDefault();
+          const name = document.getElementById("nameInput").value;
+          const age = Number(document.getElementById("ageInput").value);
+          const id = document.getElementById("idInput").value;
+          const lastName = document.getElementById("lastNameInput").value;
+    
+          pushPerson(name, age, id, lastName);
+    
+          console.log(personsArray);
+          form.reset(); 
+        });
+      </script>
+      <script src="./script.js"></script>
+</body>
+</html>
